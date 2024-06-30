@@ -13,7 +13,7 @@ User's search query is sent to the backend, which fetches top 50 search results 
 ## Technology Stack
 - Frontend: React, HTML, CSS, Tailwind
 - Backend: Express
-- Machine Learning: Python, Flask, TensonFlow
+- Machine Learning: Python, Flask, TensorFlow
 
 ## Architecture
 ![Architecture Diagram](./backend/MGR%20Client-Server%20Architecture.png)
