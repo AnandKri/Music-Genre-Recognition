@@ -11,9 +11,9 @@ Through this project I've tried to explore that to what extent does the music it
 User's search query is sent to the backend, which fetches top 50 search results from Spotify Search>Search for Item API and send it back to frontend. When user selects a particular song from the displayed results, song's trackID and artistID are sent to the backend. True genres are fetched from Spotify Artists>Get Artist API and predicted genres from the ML Model. Input for the ML Model is fetched from Spotify Tracks>Get Track's Audio Features API.
 
 ## Technology Stack
-- Frontend: React, HTML, CSS, Tailwind
-- Backend: Express
-- Machine Learning: Python, Flask, TensorFlow
+- Frontend: React
+- Backend: Node.js
+- Machine Learning: Flask
 
 ## Architecture
 ![Architecture Diagram](./backend/MGR%20Client-Server%20Architecture.png)
