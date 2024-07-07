@@ -1,0 +1,7 @@
+flask
+pathlib
+pandas
+numpy
+tensorflow
+json
+sklearn
