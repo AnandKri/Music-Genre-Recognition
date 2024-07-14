@@ -11,7 +11,15 @@ const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+
+frontendServer = process.env.REACT_APP_FRONTEND_SERVER_URL
+const corsOptions = {
+  origin: frontendServer,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
+// app.use(cors());
+
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
