@@ -56,5 +56,5 @@ def predict_genres():
         return jsonify({'error': str(e)}), 400
 
 
-port = int(os.environ.get('FLASK_PORT', 8000))
+port = int(os.environ.get('PORT', 8000))
 app.run(host='0.0.0.0',port=port)

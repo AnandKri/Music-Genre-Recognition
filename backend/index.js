@@ -141,9 +141,10 @@ app.post('/songName', async (req,res) => {
         console.log(AudioFeatures)
 
         const flaskServer = process.env.FLASK_SERVER_URL
-        const flaskPort = process.env.FLASK_PORT
+        // const flaskPort = process.env.FLASK_PORT || 8000
 
-        const predictionRes = await fetch(`${flaskServer}:${flaskPort}/predict_genres`,{
+        // const predictionRes = await fetch(`${flaskServer}:${flaskPort}/predict_genres`,{
+        const predictionRes = await fetch(`${flaskServer}/predict_genres`,{
           method:'POST',
           headers:{
             'Content-Type':'application/json'
