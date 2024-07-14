@@ -6,3 +6,4 @@ tensorflow
 json
 sklearn
 python-dotenv
+os
