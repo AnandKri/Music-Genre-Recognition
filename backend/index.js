@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 
-frontendServer = process.env.REACT_APP_FRONTEND_SERVER_URL
+const frontendServer = process.env.REACT_APP_FRONTEND_SERVER_URL
 const corsOptions = {
   origin: frontendServer,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
