@@ -9,11 +9,13 @@ const clientId = process.env.REACT_APP_CLIENT_ID;
 const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
 const app = express();
+const port = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(bodyParser.json())
-app.listen(5000,'0.0.0.0', function (err) {
+app.listen(port,'0.0.0.0', function (err) {
     if (err) console.log(err);
-    console.log("Server listening on PORT : 5000");
+    console.log(`Server listening on PORT : ${port}`);
 });
 
 
@@ -125,9 +127,10 @@ app.post('/songName', async (req,res) => {
 
         console.log(AudioFeatures)
 
-        const flaskServer = process.env.REACT_APP_BACKEND_SERVER_URL
+        const flaskServer = process.env.FLASK_SERVER_URL
+        const flaskPort = process.env.FLASK_PORT
 
-        const predictionRes = await fetch(`${flaskServer}:8000/predict_genres`,{
+        const predictionRes = await fetch(`${flaskServer}:${flaskPort}/predict_genres`,{
           method:'POST',
           headers:{
             'Content-Type':'application/json'

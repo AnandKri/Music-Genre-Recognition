@@ -13,7 +13,9 @@ function SongDetail() {
     async function fetchDetail(){
       try{
         const nodeServer = process.env.REACT_APP_BACKEND_SERVER_URL
-        const response = await fetch(`${nodeServer}:5000/songName`,{
+        const port = process.env.PORT || 5000
+        
+        const response = await fetch(`${nodeServer}:${port}/songName`,{
           method: "POST",
           headers: {
             'Content-Type': 'application/json'
