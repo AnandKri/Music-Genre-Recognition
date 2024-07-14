@@ -15,9 +15,10 @@ function SpotifySearchResults() {
 
       try{
         const nodeServer = process.env.REACT_APP_BACKEND_SERVER_URL
-        const port = process.env.PORT || 5000
+        // const port = process.env.PORT || 5000
 
-        const response = await fetch(`${nodeServer}:${port}/songSearch`,{
+        // const response = await fetch(`${nodeServer}:${port}/songSearch`,{
+        const response = await fetch(`${nodeServer}/songSearch`,{
           method: "POST",
           headers: {
             'Content-Type': 'application/json'
