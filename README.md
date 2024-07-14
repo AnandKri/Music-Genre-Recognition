@@ -12,7 +12,7 @@ User's search query is sent to the backend, which fetches top 50 search results 
 
 ## Technology Stack
 - Frontend: React
-- Backend: Node.js
+- Backend: Express
 - Machine Learning: Flask
 
 ## Architecture
