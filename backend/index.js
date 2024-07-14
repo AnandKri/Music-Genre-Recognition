@@ -13,6 +13,11 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json())
+
+app.get('/', (req, res) => {
+  res.send('Welcome User, Server is deployed!');
+});
+
 app.listen(port,'0.0.0.0', function (err) {
     if (err) console.log(err);
     console.log(`Server listening on PORT : ${port}`);
