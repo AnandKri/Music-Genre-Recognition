@@ -16,9 +16,9 @@ app = Flask(__name__)
 
 script_dir = Path(__file__).resolve().parent
 
-model_ElectronicDance_path = script_dir / 'MGR Models/model_ElectronicDance_RandomForestClassifier.pkl.gz'
-model_RockMetal_path = script_dir / 'MGR Models/model_RockMetal_RandomForestClassifier.pkl.gz'
-model_Pop_path = script_dir / 'MGR Models/model_Pop_RandomForestClassifier.pkl.gz'
+model_ElectronicDance_path = script_dir / 'MGR Model/model_ElectronicDance_RandomForestClassifier.pkl.gz'
+model_RockMetal_path = script_dir / 'MGR Model/model_RockMetal_RandomForestClassifier.pkl.gz'
+model_Pop_path = script_dir / 'MGR Model/model_Pop_RandomForestClassifier.pkl.gz'
 
 with gzip.open(model_ElectronicDance_path, 'rb') as f:
     model_ElectronicDance_RandomForestClassifier = joblib.load(f)
