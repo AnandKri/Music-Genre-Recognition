@@ -5,3 +5,4 @@ tensorflow==2.16.1
 scikit-learn==1.5.0
 python-dotenv==1.0.1
 gunicorn==20.1.0
+joblib==1.4.2
