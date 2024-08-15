@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
 from pathlib import Path
 import pandas as pd
-import json
-from sklearn.metrics.pairwise import cosine_similarity
 from dotenv import load_dotenv
 import os
 import joblib
