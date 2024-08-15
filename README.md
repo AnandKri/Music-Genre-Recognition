@@ -15,6 +15,9 @@ User's search query is sent to the backend, which fetches top 50 search results 
 - Backend: Express
 - Machine Learning: Flask
 
+## Working
+![Working](./Data/2024-08-1600-05-38-ezgif.com-video-to-gif-converter.gif)
+
 ## Architecture
 ![Architecture Diagram](./Data/MGR%20Client-Server%20Architecture.png)
 
