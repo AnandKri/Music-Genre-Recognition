@@ -3,3 +3,4 @@ pandas==2.2.2
 python-dotenv==1.0.1
 gunicorn==20.1.0
 joblib==1.4.2
+scikit-learn==1.2.2
