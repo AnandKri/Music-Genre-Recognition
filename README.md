@@ -16,4 +16,26 @@ User's search query is sent to the backend, which fetches top 50 search results 
 - Machine Learning: Flask
 
 ## Architecture
-![Architecture Diagram](./backend/MGR%20Client-Server%20Architecture.png)
+![Architecture Diagram](./Data/MGR%20Client-Server%20Architecture.png)
+
+## MGR Model Training
+### Training Dataset
+Spotify Dataset (derived from [here](https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset)) was used for model training. Original dataset contained 114 Genres and for the majority of these genres not enough data points were present. These 114 genres were mapped to 8 parent genres - namely "Electronic/Dance"; "Rock/Metal"; "Pop"; "Country/Folk"; "Classical/Orchestral"; "R&B/Soul"; "Blues/Jazz" and "Hip-Hop". You can refer the [dataset](./Data/Spotify%20Dataset.xlsx) for mapping structure.
+
+### Choice Of Machine Learning Model
+
+In philosophy, Occam's razor is a problem-solving principle that suggests - "The Simplest explanation is usually the best one."
+
+For classification, binary classifiers were trained for each of the genres (Only Electronic/Dance, Rock/Metal and Pop were finally considered due to data imbalance). Random Forest was giving the best predictions among the selected traditional ML algorithms.
+
+### Prediction Algorithm
+For a given song, all three models will give their prediction of probability by which the song can belong to the respective genre. User is presented by the normalized probability ratio of individual positive probabilities given by all the models.
+
+## MGR Algorithm Performance 
+Below are the results showing the performance of the MGR algorithm on some of the well know songs.
+
+![Changes Black Sabbath](./Data/Changes%20Black%20Sabbath.png)
+![For What It's Worth Buffalo Springfield](./Data/For%20What%20It's%20Worth%20Buffalo%20Springfield.png)
+![Gimme! Gimme! Gimme! ABBA](./Data/Gimme!%20Gimme!%20Gimme!%20ABBA.png)
+![Heroes David Bowie](./Data/Heroes%20David%20Bowie.png)
+![Sweet Emotion Aerosmith](./Data/Sweet%20Emotion%20Aerosmith.png)
