@@ -16,12 +16,10 @@ model_ElectronicDance_path = script_dir / 'MGR Model/model_ElectronicDance_Rando
 model_RockMetal_path = script_dir / 'MGR Model/model_RockMetal_RandomForestClassifier.pkl.gz'
 model_Pop_path = script_dir / 'MGR Model/model_Pop_RandomForestClassifier.pkl.gz'
 
-with gzip.open(model_ElectronicDance_path, 'rb') as f:
-    model_ElectronicDance_RandomForestClassifier = joblib.load(f)
-with gzip.open(model_RockMetal_path, 'rb') as f:
-    model_RockMetal_RandomForestClassifier = joblib.load(f)
-with gzip.open(model_Pop_path, 'rb') as f:
-    model_Pop_RandomForestClassifier = joblib.load(f)
+def get_model(model_path):
+    with gzip.open(model_path, 'rb') as f:
+        model = joblib.load(f)
+    return model
 
 features_ElectronicDance = ['instrumentalness','danceability','acousticness','valence','tempo','duration_ms','speechiness','energy']
 features_RockMetal = ['acousticness','danceability','energy','loudness','tempo','speechiness','valence','duration_ms','instrumentalness','liveness']
@@ -40,9 +38,9 @@ def predict_genres():
         X_rock_metal = df[features_RockMetal]
         X_pop = df[features_Pop]
         
-        prob_electronic_dance = model_ElectronicDance_RandomForestClassifier.predict_proba(X_electronic_dance)[0][1]
-        prob_rock_metal = model_RockMetal_RandomForestClassifier.predict_proba(X_rock_metal)[0][1]
-        prob_pop = model_Pop_RandomForestClassifier.predict_proba(X_pop)[0][1]
+        prob_electronic_dance = get_model(model_ElectronicDance_path).predict_proba(X_electronic_dance)[0][1]
+        prob_rock_metal = get_model(model_RockMetal_path).predict_proba(X_rock_metal)[0][1]
+        prob_pop = get_model(model_Pop_path).predict_proba(X_pop)[0][1]
         
         ProbSum = prob_electronic_dance + prob_rock_metal + prob_pop
         
