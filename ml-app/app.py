@@ -25,8 +25,11 @@ features_ElectronicDance = ['instrumentalness','danceability','acousticness','va
 features_RockMetal = ['acousticness','danceability','energy','loudness','tempo','speechiness','valence','duration_ms','instrumentalness','liveness']
 features_Pop = ['speechiness','acousticness','duration_ms','valence','energy','loudness','tempo','danceability','liveness','instrumentalness']
 
-@app.route('/predict_genres', methods=['POST'])
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"message": "server ok"}), 200
 
+@app.route('/predict_genres', methods=['POST'])
 def predict_genres():
     try:
 
